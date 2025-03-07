@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import './pages/home_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
@@ -29,9 +31,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900],
       appBar: AppBar(
-        title: const Text("Log in"),
-        backgroundColor: Colors.amber,
+        centerTitle: true,
+        title: const Text("Log in",
+        style:TextStyle(color: Colors.white),),
+        backgroundColor: const Color.fromARGB(0, 226, 222, 222),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),
@@ -44,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 "Login \n Form",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.yellow,
+                  color: Colors.white,
                   fontSize: 50.0,
                   fontWeight: FontWeight.w900,
                   fontFamily: "Poppins",
@@ -83,18 +88,24 @@ class _MyHomePageState extends State<MyHomePage> {
                   const EdgeInsets.symmetric(vertical: 7.0, horizontal: 5.0),
               child: SizedBox(
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const HomePage()),
+                    );
+                  },
                   style: ButtonStyle(
                     backgroundColor:
-                        MaterialStateProperty.all(Colors.red), 
+                        MaterialStateProperty.all(const Color.fromARGB(255, 230, 212, 54)), 
                     padding: MaterialStateProperty.all(
                         const EdgeInsets.symmetric(
                             vertical: 13.0, horizontal: 20.0)),
                     textStyle: MaterialStateProperty.all(const TextStyle(
-                      fontSize: 23.0,
+                      fontSize: 23.0,color: Colors.white,
                     )),
                   ),
-                  child: const Text("Login"),
+                  child: const Text("Go to Home page"),
                 ),
               ),
             ),
