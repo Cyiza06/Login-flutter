@@ -105,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       fontSize: 23.0,color: Colors.white,
                     )),
                   ),
-                  child: const Text("Go to Home page"),
+                  child: const Text("Home page"),
                 ),
               ),
             ),

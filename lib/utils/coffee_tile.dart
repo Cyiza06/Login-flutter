@@ -43,10 +43,6 @@ class CoffeeTile extends StatelessWidget {
                     coffeeName,
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
-                  Text(
-                    coffeeName,
-                    style: TextStyle(color: Colors.grey[400], fontSize: 15),
-                  ),
                 ],
               ),
             ),

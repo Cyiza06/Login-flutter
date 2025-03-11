@@ -35,8 +35,8 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.grey[900],
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: const Color.fromARGB(0, 156, 155, 155),
-        leading: Icon(Icons.menu),
+        backgroundColor: const Color.fromARGB(0, 233, 228, 228),
+        leading: const Icon(Icons.menu),
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 25.0),
@@ -68,21 +68,21 @@ class _HomePageState extends State<HomePage> {
         children: [
           // find the best coffee for you
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            padding: const EdgeInsets.symmetric(horizontal: 22.0),
             child: Text(
               'Find the best coffee for you',
               style: GoogleFonts.bebasNeue(
-                fontSize: 55,
+                fontSize: 46,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: 6),
 
           // search bar
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: TextField(
               decoration: InputDecoration(
                 prefixIcon: const Icon(Icons.search),
@@ -96,10 +96,10 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: 8),
 
           // Horizontal view of coffee categories
-          Container(
+          SizedBox(
             height: 40,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -115,8 +115,8 @@ class _HomePageState extends State<HomePage> {
           ),
 
           // Horizontal listview of coffee tiles
-          Container(
-            height: 400,
+          SizedBox(
+            height: 280,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
@@ -141,8 +141,8 @@ class _HomePageState extends State<HomePage> {
                     coffeePrice: '4.99',
                   ),
                 ],
-              ),
             ),
+          ),
         ],
       ),
     );
